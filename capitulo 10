@@ -1,0 +1,25 @@
+index.html
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="modal-bk">
+		<div class="modal">
+			<h3 class="resultado"></h3>
+			<p class="mensaje"></p>
+		</div>
+	</div>
+	<form action="" class="formulario-notas">
+		<h2 class="titulo">Introduci la nota del alumno</h2>
+		<input type="number" id="nota">
+		<input type="button" id="enviar-nota" value="otorgar nota">
+	</form>
+	
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
