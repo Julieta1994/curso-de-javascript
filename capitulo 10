@@ -136,8 +136,8 @@ sendButton.addEventListener("click",()=>{
 
 	} catch (e) {
 
-		resultado = 'sos gracioso';
-		mensaje = 'descubri que estas quieriendo hackear al sitio';
+		resultadoMateria = 'sos gracioso';
+		ultimoExamen = 'descubri que estas quieriendo hackear al sitio';
 	}
 
 	abrirModal(resultadoMateria,ultimoExamen);	
