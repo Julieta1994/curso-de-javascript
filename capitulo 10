@@ -1,4 +1,4 @@
-index.html
+///// INDEX.HTML //////
 
 <html lang="en">
 <head>
@@ -23,3 +23,177 @@ index.html
 <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
+
+
+---------------------------------
+STYLE.CSS ///////////
+
+//Las mesas de examen terminaron y el profesor tomo el ultimo examen, Ya cofla hizo dos examenes mas 
+// se rompio el sistema de registro de notas 	y hay que crear una solucion
+//hacer: 1-crear mini interfaz para introducit la nota 2-validar que no haya errores 
+//3-promediar la nota del profesor con 2 anteriores 4- si el promedio es mayor a 7/10 aprobo la materia
+
+
+const sendButton = document.getElementById("enviar-nota");
+
+let resultado,mensaje;
+
+sendButton.addEventListener("click",()=>{
+	try{
+
+		prevRes = parseInt(document.getElementById("nota").value);
+		if(isNaN(prevRes)) {
+			throw "error de gracioso";
+		};
+		resultadoMateria = confirmarAprobacion(8,10,prevRes);
+		ultimoExamen = verificarAprobacion(prevRes);
+
+
+	} catch (e) {
+
+		resultado = 'sos gracioso';
+		mensaje = 'descubri que estas quieriendo hackear al sitio';
+	}
+
+	abrirModal(resultadoMateria,ultimoExamen);	
+
+
+})
+
+const verificarAprobacion = (prevRes) => {
+	let resultado;
+	switch (prevRes) {
+		case 1: resultado = "desaprobaste con 1";
+		break;
+		case 2: resultado = "desaprobaste con 2";
+		break;
+		case 3: resultado = "desaprobaste con 3";
+		break;
+		case 4: resultado = "desaprobaste con 4";
+		break;
+		case 5: resultado = "desaprobaste con 5";
+		break;
+		case 6: resultado = "aprobaste con 6";
+		break;
+		case 7: resultado = "aprobaste con 7";
+		break;
+		case 8: resultado = "aprobaste con 8";
+		break;
+		case 9: resultado = "aprobaste con 9";
+		break;
+		case 10: resultado = "aprobaste con 10";
+		break;
+		default: resultado = null;
+		console.log('hola desde el switch');
+	};
+		console.log(prevRes+'hola')
+
+	return  resultado;
+}
+
+const confirmarAprobacion = (nota1, nota2, prevRes)=> {
+	let promedio = (nota1 + nota2 + prevRes) / 3;
+	if (promedio >= 7) {
+		return "<span class='green'>LA MATERIA ESTA APROBADA </span>"; 
+	} else {
+	return "<span class='red'>LA MATERIA ESTA DESAPROBADA </span>";
+	} 
+};
+
+const abrirModal = (res,msg)=> {
+ document.querySelector(".resultado").innerHTML = res;
+ document.querySelector(".mensaje").innerHTML = "En tu ultimo examen "+ msg;
+ let modal = document.querySelector(".modal-bk");
+ modal.style.display = "flex";
+ modal.style.animation = "aparecer 1s forwards";
+
+
+};
+
+-------------------------------------------
+MAIN.JS /////////////////////////
+
+
+//Las mesas de examen terminaron y el profesor tomo el ultimo examen, Ya cofla hizo dos examenes mas 
+// se rompio el sistema de registro de notas 	y hay que crear una solucion
+//hacer: 1-crear mini interfaz para introducit la nota 2-validar que no haya errores 
+//3-promediar la nota del profesor con 2 anteriores 4- si el promedio es mayor a 7/10 aprobo la materia
+
+
+const sendButton = document.getElementById("enviar-nota");
+
+let resultado,mensaje;
+
+sendButton.addEventListener("click",()=>{
+	try{
+
+		prevRes = parseInt(document.getElementById("nota").value);
+		if(isNaN(prevRes)) {
+			throw "error de gracioso";
+		};
+		resultadoMateria = confirmarAprobacion(8,10,prevRes);
+		ultimoExamen = verificarAprobacion(prevRes);
+
+
+	} catch (e) {
+
+		resultado = 'sos gracioso';
+		mensaje = 'descubri que estas quieriendo hackear al sitio';
+	}
+
+	abrirModal(resultadoMateria,ultimoExamen);	
+
+
+})
+
+const verificarAprobacion = (prevRes) => {
+	let resultado;
+	switch (prevRes) {
+		case 1: resultado = "desaprobaste con 1";
+		break;
+		case 2: resultado = "desaprobaste con 2";
+		break;
+		case 3: resultado = "desaprobaste con 3";
+		break;
+		case 4: resultado = "desaprobaste con 4";
+		break;
+		case 5: resultado = "desaprobaste con 5";
+		break;
+		case 6: resultado = "aprobaste con 6";
+		break;
+		case 7: resultado = "aprobaste con 7";
+		break;
+		case 8: resultado = "aprobaste con 8";
+		break;
+		case 9: resultado = "aprobaste con 9";
+		break;
+		case 10: resultado = "aprobaste con 10";
+		break;
+		default: resultado = null;
+		console.log('hola desde el switch');
+	};
+		console.log(prevRes+'hola')
+
+	return  resultado;
+}
+
+const confirmarAprobacion = (nota1, nota2, prevRes)=> {
+	let promedio = (nota1 + nota2 + prevRes) / 3;
+	if (promedio >= 7) {
+		return "<span class='green'>LA MATERIA ESTA APROBADA </span>"; 
+	} else {
+	return "<span class='red'>LA MATERIA ESTA DESAPROBADA </span>";
+	} 
+};
+
+const abrirModal = (res,msg)=> {
+ document.querySelector(".resultado").innerHTML = res;
+ document.querySelector(".mensaje").innerHTML = "En tu ultimo examen "+ msg;
+ let modal = document.querySelector(".modal-bk");
+ modal.style.display = "flex";
+ modal.style.animation = "aparecer 1s forwards";
+
+
+};
+
+
